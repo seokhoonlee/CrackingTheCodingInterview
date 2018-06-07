@@ -1,6 +1,6 @@
-public static final int DEFAULT_ARRAY_LIST_LENGTH = 32;
-
 class Main {
+    public static final int DEFAULT_ARRAY_LIST_LENGTH = 32;
+    
     public static class Element<T> {
         T t;
         
