@@ -1,30 +1,40 @@
-// Class name must be "Main"
-// Libraries included:
-// json simple, guava, apache commons lang3, junit, jmock
-
 class Main {
+    public static class Element<T> {
+        T t;
+        
+        public Element(T t) {
+            this.t = t;
+        }
+        
+        public void set(T t) {
+            this.t = t;
+        }
+        
+        public T get() {
+            return this.t;
+        }
+    }
+    
     public static class ArrayList {
         public int size;
         public int elemCount;
-        public int[] array;
+        public Element[] array;
         
         public ArrayList() {
-            this.size = 32;
-            this.elemCount = 0;
-            this.array = new int[32];
+            this(32);
         }
         
         public ArrayList(int size) {
             this.size = size;
             this.elemCount = 0;
-            this.array = new int[size];
+            this.array = new Element[size];
         }
         
-        public int getElementAtIndex(int getIndex) {
-            if (getIndex < this.elemCount && getIndex >= 0) {
-                return this.array[getIndex];
+        public Element getElementAtIndex(int getIndex) {
+            if (getIndex < 0 || getIndex >= this.elemCount) {
+                return null;
             } else {
-                return -1;
+                return this.array[getIndex];
             }
         }
         
@@ -32,17 +42,17 @@ class Main {
             return this.size;
         }
         
-        public int getElemCount() {
+        public int getElementCount() {
             return this.elemCount;
         }
         
-        public void appendElement(int appendElement) {
+        public void appendElement(Element appendElement) {
             this.array[this.elemCount] = appendElement;
             this.elemCount++;
             
             if (this.elemCount == this.size) {
                 this.size *= 2;
-                int[] newArray = new int[this.size];
+                Element[] newArray = new Element[this.size];
                 
                 for (int i = 0; i < this.elemCount; i++) {
                     newArray[i] = this.array[i];
@@ -62,10 +72,12 @@ class Main {
     }
     
     public static void main(String[] args) {
-        ArrayList al = new ArrayList(4);
+        ArrayList al = new ArrayList();
         
         for (int i = 0; i < 8; i++) {
-            al.appendElement(i);
+            Element<Integer> e = new Element(i);
+            
+            al.appendElement(e);
         }
         
         // test edge case (start)
@@ -87,7 +99,7 @@ class Main {
         System.out.print(al.getArraySize() + "\n");
         
         // test get elem count method
-        System.out.print(al.getElemCount() + "\n");
+        System.out.print(al.getElementCount() + "\n");
 
         // test edge case (end) of remove element at index method
         al.removeElementAtIndex(7);
@@ -96,7 +108,7 @@ class Main {
         
         System.out.print(al.getArraySize() + "\n");
         
-        System.out.print(al.getElemCount() + "\n");
+        System.out.print(al.getElementCount() + "\n");
         
         // test edge case (start) of remove element at index method
         al.removeElementAtIndex(0);
@@ -105,6 +117,6 @@ class Main {
         
         System.out.print(al.getArraySize() + "\n");
         
-        System.out.print(al.getElemCount() + "\n");
+        System.out.print(al.getElementCount() + "\n");
     }
 }
