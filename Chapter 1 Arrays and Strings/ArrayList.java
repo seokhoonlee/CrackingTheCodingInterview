@@ -1,3 +1,5 @@
+public static final int DEFAULT_ARRAY_LIST_LENGTH = 32;
+
 class Main {
     public static class Element<T> {
         T t;
@@ -21,7 +23,7 @@ class Main {
         public Element[] array;
         
         public ArrayList() {
-            this(32);
+            this(DEFAULT_ARRAY_LIST_LENGTH);
         }
         
         public ArrayList(int size) {
