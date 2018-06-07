@@ -87,10 +87,24 @@ class Main {
     }
     
     public static void main(String[] args) {
-        Node<Integer> n = new Node(4);
+        LinkedList ll = new LinkedList();
         
-        System.out.print(n.get());
+        for (int i = 0; i < 8; i++) {
+            Node<Integer> n = new Node(i);
+            
+            ll.appendNode(n);
+        }
         
+        System.out.print(ll.getNodeAtIndex(1) + "\n");
+        System.out.print(ll.getNodeAtIndex(3) + "\n");
+        System.out.print(ll.getNodeAtIndex(5) + "\n");
+        System.out.print(ll.getNodeAtIndex(7) + "\n");
         
+        ll.removeNodeAtIndex(0);
+        
+        System.out.print(ll.getNodeAtIndex(1) + "\n");
+        System.out.print(ll.getNodeAtIndex(3) + "\n");
+        System.out.print(ll.getNodeAtIndex(5) + "\n");
+        System.out.print(ll.getNodeAtIndex(7) + "\n");
     }
 }
