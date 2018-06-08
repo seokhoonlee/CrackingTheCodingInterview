@@ -64,13 +64,21 @@ class Main {
             }
         }
         
-        public void removeElementAtIndex(int index) {
+        public boolean removeElementAtIndex(int index) {
+            if (getIndex < 0 || getIndex >= this.elemCount) {
+                return false;
+            }
+
             this.elemCount--;
             
             for(int i = index; i < this.elemCount; i++) {
                 this.array[i] = this.array[i + 1];
             }
+
+            return true;
         }
+    }
+
     }
     
     public static void main(String[] args) {
