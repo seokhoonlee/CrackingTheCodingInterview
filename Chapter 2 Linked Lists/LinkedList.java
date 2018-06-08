@@ -63,11 +63,11 @@ class Main {
             return iter;
         }
         
-        public void removeNodeAtIndex(int index) {
+        public boolean removeNodeAtIndex(int index) {
             Node n = this.getNodeAtIndex(index);
             
             if (n == null) {
-                return;
+                return false;
             }
             
             if (n.next == null && n.prev == null) {
@@ -83,6 +83,8 @@ class Main {
                 n.prev.next = n.next;
                 n.next.prev = n.prev;
             }
+            
+            return true;
         }
     }
     
