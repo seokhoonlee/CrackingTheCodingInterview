@@ -32,11 +32,11 @@ class Main {
             this.array = new Element[size];
         }
         
-        public Element getElementAtIndex(int getIndex) {
-            if (getIndex < 0 || getIndex >= this.elemCount) {
+        public Element getElementAtIndex(int index) {
+            if (index < 0 || index >= this.elemCount) {
                 return null;
             } else {
-                return this.array[getIndex];
+                return this.array[index];
             }
         }
         
@@ -65,7 +65,7 @@ class Main {
         }
         
         public boolean removeElementAtIndex(int index) {
-            if (getIndex < 0 || getIndex >= this.elemCount) {
+            if (index < 0 || index >= this.elemCount) {
                 return false;
             }
 
@@ -77,8 +77,6 @@ class Main {
 
             return true;
         }
-    }
-
     }
     
     public static void main(String[] args) {
