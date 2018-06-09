@@ -43,7 +43,9 @@ class Main {
             for (int i = firstEmptyIndex; i < firstEmptyIndex + stringLength; i++) {
                 this.array[i] = s.charAt(j);
                 j++;
-            }   
+            }
+            
+            firstEmptyIndex += stringLength;
         }
         
         public String toString() {
@@ -52,6 +54,11 @@ class Main {
     }
     
     public static void main(String[] args) {
-        System.out.println("Hello, world!");
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("Apple");
+        sb.append("Banana");
+        
+        System.out.print(sb.toString());
     }
 }
