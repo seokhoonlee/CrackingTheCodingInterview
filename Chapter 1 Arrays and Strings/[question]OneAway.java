@@ -19,6 +19,10 @@ class Main {
                 stringLength2 = tempLength;
             }
             
+            if (stringLength1 + 1 < stringLength2) {
+                return false;
+            }
+            
             boolean edited = false;
             int i = 0;
             int j = 0;    
@@ -52,6 +56,7 @@ class Main {
         System.out.print(sol1.solve("pale", "bale") + "\n");
         System.out.print(sol1.solve("pale", "bake") + "\n");
         System.out.print(sol1.solve("pale", "pale") + "\n");
+        System.out.print(sol1.solve("palest", "pale") + "\n");
     }
 }
 
