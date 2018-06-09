@@ -63,9 +63,7 @@ class Main {
             return iter;
         }
         
-        public boolean removeNodeAtIndex(int index) {
-            Node n = this.getNodeAtIndex(index);
-            
+        public boolean removeNode(Node n) {
             if (n == null) {
                 return false;
             }
@@ -102,7 +100,7 @@ class Main {
         System.out.print(ll.getNodeAtIndex(5) + "\n");
         System.out.print(ll.getNodeAtIndex(7) + "\n");
         
-        ll.removeNodeAtIndex(0);
+        ll.removeNode(ll.getNodeAtIndex(0));
         
         System.out.print(ll.getNodeAtIndex(1) + "\n");
         System.out.print(ll.getNodeAtIndex(3) + "\n");
