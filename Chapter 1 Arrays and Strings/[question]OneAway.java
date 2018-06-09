@@ -1,4 +1,4 @@
-// Question 1.4 One Away
+// Question 1.5 One Away
 // Solution 1: If length is same, replace. If length differ by one, delete: O(N), Space: O(1)
 
 class Main {
