@@ -1,5 +1,5 @@
 // Question 1.3 URLify
-// Solution 1: Check if count of char in string is same Time: O(N), Space: O(1)
+// Solution 1: Replace blank space with %20: O(N), Space: O(1)
 
 class Main {
     public static class Solution1 {
