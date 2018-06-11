@@ -1,42 +1,47 @@
 // Question 1.5 One Away
-// Solution 1: If length is same, replace. If length differ by one, delete: O(N), Space: O(1)
+// Solution 1: Replace or Delete based on string length and count number of edits: O(N), Space: O(1)
 
 class Main {
+    public static final int MAX_EDIT = 1;
+    
     public static class Solution1 {
-        public boolean solve(String inputString1, String inputString2) {
-            int stringLength1 = inputString1.length();
-            int stringLength2 = inputString2.length();
+        public boolean solve(String s1, String s2) {
+            int len1 = s1.length();
+            int len2 = s2.length();
             
-            if (stringLength1 > stringLength2) { // ensure inputString1 is always shorter or equal than inputString2
-                String tempString;
-                tempString = inputString1;
-                inputString1 = inputString2;
-                inputString2 = tempString;
-                
-                int tempLength;
-                tempLength = stringLength1;
-                stringLength1 = stringLength2;
-                stringLength2 = tempLength;
-            }
-            
-            if (stringLength1 + 1 < stringLength2) {
+            if (len1 - len2 > 1 || len2 - len1 > 1) {
                 return false;
             }
             
-            boolean edited = false;
+            if (len1 > len2) {
+                int tempLen = len1;
+                len1 = len2;
+                len2 = tempLen;
+                
+                String tempS = s1;
+                s1 = s2;
+                s2 = tempS;
+            }
+                
             int i = 0;
-            int j = 0;    
-          
-            while (i < stringLength1 && j < stringLength2) {
-                if (inputString1.charAt(i) != inputString2.charAt(j)) {
-                    if (edited) {
+            int j = 0;
+            int numEdit = 0;
+            
+            StringBuilder sb1 = new StringBuilder(" " + s1 + " ");
+            StringBuilder sb2 = new StringBuilder(" " + s2 + " ");      
+            len1 += 2;
+            len2 += 2;
+            
+            while (i < len1 && j < len2) {
+                if (sb1.charAt(i) != sb2.charAt(j)) {
+                    numEdit++;
+                    
+                    if (numEdit > MAX_EDIT) {
                         return false;
-                    } else {
-                        edited = true;
-                        
-                        if (stringLength1 != stringLength2) {
-                            i--;
-                        }
+                    }
+                    
+                    if (len1 < len2) {
+                        i--;
                     }
                 }
                 
