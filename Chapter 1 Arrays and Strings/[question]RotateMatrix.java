@@ -1,7 +1,3 @@
-/**
- * Main class of the Java program.
- */
-
 class Main {
     public static class Solution1 {
         public static int[][] solve(int[][] A) {
@@ -19,6 +15,38 @@ class Main {
         }
     }
     
+    public static class Solution2 {
+        public static int[][] solve(int[][] A) {
+            int n = A.length;
+            
+            for (int i = 0; i < n/2; i++) {
+                for (int j = i; j < n - 1 - i; j++) {
+                    int temp = A[i][j];
+                    
+                    int oi = i;
+                    int oj = j;
+                    int ni = n - 1 - j;
+                    int nj = i;
+                    
+                    for (int k = 0; k < 4; k++) {
+                        if (k != 3) {
+                            A[oi][oj] = A[ni][nj];
+                            
+                            oi = ni;
+                            oj = nj;
+                            ni = n - 1 - oj;
+                            nj = oi;
+                        } else {
+                            A[oi][oj] = temp;
+                        }
+                    }
+                }
+            }
+            
+            return A;
+        }
+    }
+    
     public static void main(String[] args) {
         for (int k = 3; k <= 4; k++) {
             int[][] A = new int[k][k];
@@ -29,7 +57,7 @@ class Main {
                 }
             }
             
-            Solution1 sol = new Solution1();
+            Solution2 sol = new Solution2();
             
             int[][] B = sol.solve(A);
             
