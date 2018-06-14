@@ -1,10 +1,9 @@
-// Question 1.5 One Away
-// Solution 1: Replace or Delete based on string length and count number of edits: O(N), Space: O(1)
+// 1.5 One Away
 
 class Main {
     public static final int MAX_EDIT = 1;
     
-    public static class Solution1 {
+    public static class Solution {
         public boolean solve(String s1, String s2) {
             int len1 = s1.length();
             int len2 = s2.length();
@@ -54,14 +53,14 @@ class Main {
     }
     
     public static void main(String[] args) {
-        Solution1 sol1 = new Solution1();
+        Solution sol = new Solution();
         
-        System.out.print(sol1.solve("pale", "ple") + "\n");
-        System.out.print(sol1.solve("pales", "pale") + "\n");
-        System.out.print(sol1.solve("pale", "bale") + "\n");
-        System.out.print(sol1.solve("pale", "bake") + "\n");
-        System.out.print(sol1.solve("pale", "pale") + "\n");
-        System.out.print(sol1.solve("palest", "pale") + "\n");
+        System.out.print(sol.solve("pale", "ple") + "\n");
+        System.out.print(sol.solve("pales", "pale") + "\n");
+        System.out.print(sol.solve("pale", "bale") + "\n");
+        System.out.print(sol.solve("pale", "bake") + "\n");
+        System.out.print(sol.solve("pale", "pale") + "\n");
+        System.out.print(sol.solve("palest", "pale") + "\n");
     }
 }
 
