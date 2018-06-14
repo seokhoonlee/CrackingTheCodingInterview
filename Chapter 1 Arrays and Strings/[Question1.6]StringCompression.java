@@ -1,7 +1,7 @@
-// Question 1.6 String Compression
+// 1.6 String Compression
 
 class Main {  
-    public static class Solution1 {
+    public static class Solution {
         public String solve(String s) {
             StringBuilder sb1 = new StringBuilder(" " + s + " ");
             StringBuilder sb2 = new StringBuilder();
@@ -33,13 +33,13 @@ class Main {
     }
     
     public static void main(String[] args) {
-        Solution1 sol1 = new Solution1();
+        Solution sol = new Solution();
         
-        System.out.print(sol1.solve("abc") + "\n");
-        System.out.print(sol1.solve("aaa") + "\n");
-        System.out.print(sol1.solve("aaabbb") + "\n");
-        System.out.print(sol1.solve("aaabbbb") + "\n");
-        System.out.print(sol1.solve("aaab") + "\n");
+        System.out.print(sol.solve("abc") + "\n");
+        System.out.print(sol.solve("aaa") + "\n");
+        System.out.print(sol.solve("aaabbb") + "\n");
+        System.out.print(sol.solve("aaabbbb") + "\n");
+        System.out.print(sol.solve("aaab") + "\n");
     }
 }
 
