@@ -1,6 +1,4 @@
-/**
- * Main class of the Java program.
- */
+// 1.8 Zero Matrix
 
 class Main {
     public static class Solution {
