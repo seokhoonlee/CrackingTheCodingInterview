@@ -1,7 +1,4 @@
-// Question 1.1 Is Unique
-// Solution 1: Use HashMap to check if unique     Time: O(N),     Space: HashMap O(N)?
-// Solution 2: Count occurrence of character      Time: O(N),     Space: O(1) Assumption: String only consists of lower case alphabets
-// Solution 3: Sort the string to check if unique Time: O(NlogN), Space: O(1)
+// 1.1 Is Unique
 
 import java.util.HashMap;
 import java.util.Arrays;
