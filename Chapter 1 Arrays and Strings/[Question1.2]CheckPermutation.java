@@ -1,5 +1,4 @@
-// Question 1.2 Check Permutation
-// Solution 1: Check if count of char in string is same Time: O(N), Space: O(1)
+// 1.2 Check Permutation
 
 class Main {
     public static class Solution1 {
