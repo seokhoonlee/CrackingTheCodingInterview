@@ -1,8 +1,7 @@
-// Question 1.4 Palindrome Permutation
-// Solution 1: Count the number of char in a string to determine if palindrome permutation : O(N), Space: O(1)
+// 1.4 Palindrome Permutation
 
 class Main {
-    public static class Solution1 {
+    public static class Solution {
         public boolean solve(String inputString) {
             int[] countArray = new int[26];
             for (int i = 0; i < 26; i++) {
@@ -14,6 +13,7 @@ class Main {
             }
             
             int numOdd = 0;
+            
             for (int i = 0; i < 26; i++) {
                 if (countArray[i] % 2 == 1) {
                     numOdd++;
@@ -29,14 +29,14 @@ class Main {
     }
     
     public static void main(String[] args) {
-        Solution1 sol1 = new Solution1();
+        Solution sol = new Solution();
         
-        System.out.print(sol1.solve("a") + "\n");
-        System.out.print(sol1.solve("ab") + "\n");
-        System.out.print(sol1.solve("aba") + "\n");
-        System.out.print(sol1.solve("aab") + "\n");
-        System.out.print(sol1.solve("aabb") + "\n");
-        System.out.print(sol1.solve("tacocat") + "\n");
-        System.out.print(sol1.solve("atcocta") + "\n");
+        System.out.print(sol.solve("a") + "\n");
+        System.out.print(sol.solve("ab") + "\n");
+        System.out.print(sol.solve("aba") + "\n");
+        System.out.print(sol.solve("aab") + "\n");
+        System.out.print(sol.solve("aabb") + "\n");
+        System.out.print(sol.solve("tacocat") + "\n");
+        System.out.print(sol.solve("atcocta") + "\n");
     }
 }
