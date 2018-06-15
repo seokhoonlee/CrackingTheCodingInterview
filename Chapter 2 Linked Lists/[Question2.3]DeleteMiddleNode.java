@@ -2,22 +2,18 @@
 
 class Main {
     public static class Solution {
-        public static LinkedList solve (LinkedList ll, LinkedListNode d) {
+        public static boolean solve (LinkedListNode n) {
             
-            LinkedListNode n = ll.head;
-            LinkedListNode prev = null;
-            
-            while (n != null) {
-                if (n == d) {
-                    prev.next = n.next;
-                    break;
-                }
-                
-                prev = n;
-                n = n.next;
+            if (n == null || n.next == null) {
+                return false;
             }
             
-            return ll;
+            LinkedListNode next = n.next;
+            
+            n.value() = next.value();
+            n.next = next.next;
+            
+            return true;
         }
     }
 }
