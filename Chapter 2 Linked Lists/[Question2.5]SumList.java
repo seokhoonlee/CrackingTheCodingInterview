@@ -1,6 +1,6 @@
 // 2.5 Sum List
 
-class Main
+class Main {
     public static class Solution {
         public static LinkedList solve(LinkedList ll1, LinkedList ll2) {
             Node n1 = ll1.head;
