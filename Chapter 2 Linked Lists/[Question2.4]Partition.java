@@ -1,6 +1,6 @@
 // 2.4 Partition
 
-class Main
+class Main {
     public static class Solution {
         public static void solve(LinkedList ll, int x) {
             LinkedListNode smallHead = null;
